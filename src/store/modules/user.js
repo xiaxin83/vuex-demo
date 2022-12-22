@@ -9,7 +9,7 @@ const getDefaultState = () => {
 };
 
 const state = getDefaultState();
-console.log(state);
+
 const mutations = {
   SET_TOKEN: (state, token) => {
     state.token = token;
@@ -22,9 +22,8 @@ const actions = {
     return new Promise((resolve, reject) => {
       login({ username: username.trim(), password: password })
         .then((response) => {
-          const { data } = response;
-          commit("SET_TOKEN", data.token);
-          setToken(data.token);
+          commit("SET_TOKEN", response.token);
+          setToken(response.token);
           resolve();
         })
         .catch((error) => {

@@ -1,17 +1,13 @@
 <template>
-  <div>
-    {{ msg }}
-  </div>
+  <div></div>
 </template>
 
 <script>
 export default {
-  name: "VuexDemoIndex",
+  name: "VuexDemoNavbar",
 
   data() {
-    return {
-      msg: "这是新的页面",
-    };
+    return {};
   },
 
   mounted() {},

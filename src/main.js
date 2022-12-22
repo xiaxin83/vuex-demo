@@ -7,12 +7,7 @@ import normalize from "normalize.css";
 import element from "./element-ui/index";
 
 Vue.use(element, normalize);
-
-if (process.env.NODE_ENV === "production") {
-  const { mockXHR } = require("../mock");
-  mockXHR();
-}
-
+require("../mock");
 Vue.config.productionTip = false;
 
 new Vue({

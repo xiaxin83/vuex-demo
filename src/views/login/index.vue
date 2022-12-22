@@ -48,8 +48,8 @@ export default {
     return {
       loading: false,
       loginform: {
-        username: "admin",
-        password: "111111",
+        username: "editor",
+        password: "123456",
       },
       loginRules: {
         username: [
@@ -85,7 +85,11 @@ export default {
           this.$store
             .dispatch("user/login", this.loginform)
             .then(() => {
-              this.$router.push({ path: "/" });
+              this.$message({
+                message: "登录成功",
+                type: "success",
+              });
+              this.$router.push({ path: this.redirect || "/" });
               this.loading = false;
             })
             .catch(() => {
